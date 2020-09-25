@@ -9,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <table>
         <tr>
-          <th>Name</th>gi
+          <th>Name</th>
           <th>Price</th>
           <th>Shares Held</th>
           <th>Market Value</th>
