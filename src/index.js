@@ -1,15 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+const positionsList = [
+    {id: 1, assetName: "Apple", price: 108.22, sharesHeld: 100},
+    {id: 2, assetName: "Tesla", price: 398.79, sharesHeld: 10}
+]
+
+function StockPortfolioGrid({gridTitle,positions}) {
+    console.log(gridTitle);
+    console.log(positions);
+    return (
+        //TODO Add Table Formatting to Stock Portfolio Grid
+        <div className="StockPortfolioGrid">
+            <h2>{gridTitle}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Shares Held</th>
+                        <th>Market Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {positions.map(position => (
+                        <tr>
+                            <td>{position.assetName}</td>
+                            <td>{position.price}</td>
+                            <td>{position.sharesHeld}</td>
+                            <td>calculation here</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+}
 
 ReactDOM.render(
-    <App />,
+    <StockPortfolioGrid gridTitle={"Jim's Stock Portfolio"} positions={positionsList} />,
     document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
