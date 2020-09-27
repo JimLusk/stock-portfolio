@@ -20,7 +20,6 @@ function StockPortfolioGrid({gridTitle,positions}) {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Shares Held</th>
-                        <th>Market Value</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +28,6 @@ function StockPortfolioGrid({gridTitle,positions}) {
                             <td>{position.assetName}</td>
                             <td>{position.price}</td>
                             <td>{position.sharesHeld}</td>
-                            <td>calculation here</td>
                         </tr>
                     ))}
                 </tbody>
